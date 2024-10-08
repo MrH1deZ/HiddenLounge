@@ -1,0 +1,46 @@
+Database Structure: A MySQL database for storing users and invitation codes. */
+
+/* Database Structure */
+CREATE DATABASE web_app_db;
+
+USE web_app_db;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    discord_name VARCHAR(100),
+    is_admin BOOLEAN DEFAULT FALSE,
+    hidez_points INT DEFAULT 0
+);
+
+CREATE TABLE invitation_codes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    code VARCHAR(50) NOT NULL UNIQUE,
+    is_used BOOLEAN DEFAULT FALSE
+);
+
+-- Create an admin user with username 'admin' and password 'Blahblah123@!'
+INSERT INTO users (username, firstname, lastname, email, password, is_admin, hidez_points)
+VALUES ('admin', 'Admin', 'User', 'admin@example.com', '$2y$10$UgXKF3Q7bWpcyxsxPwF5eO240AbGoF57t8DgiCM8twni2YmYoRTPa', TRUE, 1000);
+/* Password is hashed using bcrypt for 'Blahblah123@!' */
+
+
+
+
+
+
+
+
+
+
+Can you make me a php template with:
+login form- Username, Password, Register Button  - This will be the main page index.php
+register form - Username, Password, E-mail, Invitation Code 
+user panel - Horizontal header menu with left side logo slot, Centered box with Left side user icon with username initials and Hello, Username under it and Admin Panel button if the user is admin. After that in a structure, vertical menu with tabs - Settings, Subscriptions, Licenses, Points in which when you change the tabs to visualise in the box.
+admin panel - With left side vertical menu where There is a Hello, username and under it User Panel button to go back to user panel. After that the vertical menu with Invitation codes, User Manage, Subscriptions, Licenses, HideZ Points, Shop Manage.
+
+Everything should be optimized and made for all devices PC, mobile and tablets, all requests within to be fixed so if one action is made and the page is force refreshed not to perform the same action but just to refresh the page and after action is performed to auto update the changes and visualize it after the action. Please made every page on separate file and also CSS, js, ajax and everything else also to be in separate files. All functions should be structured in functions/*.php
