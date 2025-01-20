@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "fxinvrev_tester";
-$password = "Tester123@!Test";
-$dbname = "fxinvrev_tester";
+$username = "Username";
+$password = "Password";
+$dbname = "DBname";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
