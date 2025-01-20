@@ -1,5 +1,5 @@
 <?php
-$password = 'Blahblah123@!';
+$password = 'YourPasswordHere';
 $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 echo $hashed_password;
 ?>
